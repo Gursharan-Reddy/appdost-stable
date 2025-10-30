@@ -31,8 +31,6 @@ export default function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    // We need to install lucide-react first!
-    // npm install lucide-react
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
@@ -156,10 +154,23 @@ export default function App() {
           <div className="flex flex-col items-center md:items-end">
              <p className="text-gray-600 dark:text-gray-400 mb-3">Contact: hr@appdost.in</p>
              <div className="flex space-x-6">
-               <a href="#" className="text-gray-500 hover:text-blue-600 dark:hover:text-blue-500" aria-label="GitHub">
+               <a 
+                 href="https://github.com" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 className="text-gray-500 hover:text-blue-600 dark:hover:text-blue-500" 
+                 aria-label="GitHub"
+               >
                  <Github size={24} />
                </a>
-               <a href="#" className="text-gray-500 hover:text-blue-600 dark:hover:text-blue-500" aria-label="LinkedIn">
+               {/* --- THIS IS THE UPDATED LINK --- */}
+               <a 
+                 href="https://www.linkedin.com/company/appdost-complete-it-solution" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 className="text-gray-500 hover:text-blue-600 dark:hover:text-blue-500" 
+                 aria-label="LinkedIn"
+               >
                  <Linkedin size={24} />
                </a>
                <a href="mailto:hr@appdost.in" className="text-gray-500 hover:text-blue-600 dark:hover:text-blue-500" aria-label="Email">
@@ -356,7 +367,6 @@ function ProcessSection() {
       </div>
 
       <div className="relative">
-        {/* Connecting line */}
         <div className="hidden md:block absolute top-10 left-0 right-0 h-0.5 bg-gray-200 dark:bg-gray-700 w-full" style={{ top: '3.25rem' }}></div>
         
         <div className="grid md:grid-cols-4 gap-10 relative">
@@ -447,7 +457,9 @@ const ProjectCard = ({ project }) => (
     </div>
     <div className="bg-gray-50 dark:bg-gray-800/50 p-6">
       <a 
-        href="#" 
+        href="https://example.com" 
+        target="_blank" 
+        rel="noopener noreferrer" 
         className="text-blue-600 dark:text-blue-400 font-medium flex items-center gap-2 group-hover:gap-3 transition-all"
       >
         View Project <ArrowRight size={18} />
@@ -468,7 +480,6 @@ function ContactSection() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // In a real app, you'd send this data to a server or email service
     console.log("Form Submitted:", formData);
     setIsSubmitted(true);
     setFormData({ name: '', email: '', message: '' });
